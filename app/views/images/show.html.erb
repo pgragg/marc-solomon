@@ -1,0 +1,39 @@
+<!--  image_tag "/assets/images/mcd_figure.jpg"  -->
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <ul class="nav navbar-nav">
+    </ul>
+    <p class="navbar-text float-right">
+      <%=link_to "Marc Solomon", contact_path%> </p>
+  </nav>
+
+  <div class = "gallery_row">
+    <div class = "card media-middle text-center">
+      <div class= "card-content">
+        <h4> <%= @image.name %> </h4> <br>
+        <h5><%=@image.year %></h5>
+        <br>
+        <h5> <%= @image.material%> </h5>
+        <%= @image.size%>
+       </div>
+       <div class = "card-nav">
+        <%=link_to image_path(@last_image) do %>
+          <div class ="btn btn-default left">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+          </div>
+        <% end %> 
+        <%=link_to image_path(@next_image) do %>
+          <div class ="btn btn-default right">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+          </div>
+        <% end %> 
+        </div>
+     </div>
+    <div class="picture_container text-center">
+      <div class = "picture">
+        <%= image_tag "/assets/images/#{@image.path}" %>
+      </div>
+    </div>
+  </div>
+</div>
